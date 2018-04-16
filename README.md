@@ -1,7 +1,39 @@
 # uxal-officegen [![npm version](https://badge.fury.io/js/officegen.svg)](https://badge.fury.io/js/officegen) [![Build Status](https://travis-ci.org/Ziv-Barber/officegen.png?branch=master)](https://travis-ci.org/Ziv-Barber/officegen) [![Dependencies Status](https://gemnasium.com/Ziv-Barber/officegen.png)](https://gemnasium.com/Ziv-Barber/officegen) [![Join the chat at https://gitter.im/officegen/Lobby](https://badges.gitter.im/officegen/Lobby.svg)](https://gitter.im/officegen/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
 
 ---
-## UXAL description
+
+## 2018-04-16 UPDATE
+Added vertical alignment of images inside tables. If `vAlign` is not specified, default is: **center**
+Possible values are: `top`, `center`, `bottom`
+```js
+ const tableData = [
+      [
+        { // first column an image
+          val: [
+            {
+              type: "image",
+              path: path.resolve(__dirname, '../image.png'),
+              opts: {
+                cx: 100,
+                cy: 77,
+                vAlign: 'top',
+                paddingTop: 400 //if you want to add a top padding for image
+              }
+            }
+          ]
+```
+
+## 2018-04-10 UPDATE by [dominik-th](https://github.com/dominik-th):
+Please checkout the example /examples/make_docx_textbox_tableimage.js to see any these features in action
+
+- Absolute image positioning with addImage()
+- Textbox creation with pObj.startTextbox() and pObj.endTextbox()
+- Gridspan and vAlign back in from Ziv-Barber/officegen
+- lineHeight option for table cell spacing
+- Adjustable table cell borders
+- A way to add images anchored to a table cell
+
+## UXAL description (after initial fork)
 
 This is a officegen fork, I had to do it because I needed the following things to work:
 - Custom page margins
